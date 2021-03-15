@@ -31,7 +31,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const RedisStore = connect_redis_1.default(express_session_1.default);
     const redisClient = redis_1.default.createClient();
     app.use(express_session_1.default({
-        name: "qid",
+        name: 'qid',
         store: new RedisStore({
             client: redisClient,
             disableTouch: true,
@@ -39,11 +39,11 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
             httpOnly: true,
-            sameSite: "lax",
+            sameSite: 'lax',
             secure: __prod__,
         },
         saveUninitialized: false,
-        secret: "qowiueojwojfalksdjoqiwueo",
+        secret: 'qowiueojwojfalksdjoqiwueo',
         resave: false,
     }));
     const apolloServer = new apollo_server_express_1.ApolloServer({
@@ -55,7 +55,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     });
     apolloServer.applyMiddleware({ app });
     app.listen(4000, () => {
-        console.log("server started on localhost:4000");
+        console.log('server started on localhost:4000');
     });
 });
 main().catch((err) => {
