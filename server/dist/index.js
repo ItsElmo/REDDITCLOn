@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 const core_1 = require("@mikro-orm/core");
+const constants_1 = require("./constants");
 const mikro_orm_config_1 = __importDefault(require("./mikro-orm.config"));
 const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
@@ -40,7 +41,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
             maxAge: 1000 * 60 * 60 * 24 * 365 * 10,
             httpOnly: true,
             sameSite: 'lax',
-            secure: __prod__,
+            secure: constants_1.__Prod__,
         },
         saveUninitialized: false,
         secret: 'qowiueojwojfalksdjoqiwueo',

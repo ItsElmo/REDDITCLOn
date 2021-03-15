@@ -1,5 +1,4 @@
 node_modules
-mikro-orm.config.ts
 /node_modules
 /.pnp
 .pnp.js
